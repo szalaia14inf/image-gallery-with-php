@@ -16,6 +16,6 @@
          require_once "$view.php";
          require_once "footer.php";
     ?>
-</body>
 
+</body>
 </html>
