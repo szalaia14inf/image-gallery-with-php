@@ -26,11 +26,10 @@
 
     <!-- Képek megj. -->
     <?php foreach($content as $picture): ?>
-        <img src="<?=$picture['thumbnail']?>">
+        <a href="/images/<?=$picture['id']?>"><img src="<?=$picture['thumbnail']?>" alt="<?=$picture['title']?>" title="<?=$picture['title']?>"></a>
     <?php endforeach ?>
 
     <!-- Lapozósáv -->
     <?php require "pagination.php"?>
-
 
 </main>
