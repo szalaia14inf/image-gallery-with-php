@@ -85,7 +85,7 @@ function singleImageController($params) {
     return [
         'singleImage', 
         [
-            'title' => $picture['title'],
+            'title' => 'Image' .$picture['id'],
             'picture' => $picture
         ]
     ];

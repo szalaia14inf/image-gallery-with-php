@@ -3,7 +3,7 @@
 /**
  *  $title: IDE ÍRD AZ ALKALMAZÁS NEVÉT
  */
-$title = "Photo Gallery";
+$siteName = "Májsztró's Gallery";
 
 /**
  *  $possiblePageSize: lehetséges PAGESIZE
