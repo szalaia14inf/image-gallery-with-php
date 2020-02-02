@@ -90,3 +90,17 @@ function singleImageController($params) {
         ]
     ];
 }
+
+/**
+ * ABOUTCONTROLLER - RÓLUNK GOMB
+ */
+function aboutcontroller($params) 
+{
+    return [
+        'About', 
+        [
+             
+        ]
+    ];
+    
+}

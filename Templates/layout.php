@@ -11,6 +11,13 @@
 </head>
 
 <body>
+
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+      <div id="buttons_panel">
+       <?php echo get_buttons(); ?>
+       </div>
+</form>
+
     <?php
          require_once "header.php";
          require_once "$view.php";
