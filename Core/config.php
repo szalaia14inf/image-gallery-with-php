@@ -26,3 +26,5 @@ $routes['GET']['about'] = 'aboutController';
 $routes['GET']['/image/(?<id>[\d]+)'] = 'singleImageController';
 $routes['POST']['/image/(?<id>[\d]+)/edit'] = 'singleImageEditController';
 $routes['POST']['/image/(?<id>[\d]+)/delete'] = 'singleImageDeleteController';
+
+?>

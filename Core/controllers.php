@@ -94,13 +94,15 @@ function singleImageController($params) {
 /**
  * ABOUTCONTROLLER - RÓLUNK GOMB
  */
-function aboutcontroller($params) 
+function aboutController() 
 {
     return [
-        'About', 
+        'about', 
         [
-             
+            'title' => 'The page you are lookging for is not found.'
         ]
     ];
     
 }
+
+?>

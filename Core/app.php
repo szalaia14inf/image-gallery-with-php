@@ -9,3 +9,5 @@ $cleand = explode("?", $uri)[0];
 //DISPATCH() FV. MEGHÍVÁSA, AMI KIVÁLASZTJA AZ ADOTT ÚTVONALHOZ TARTOZÓ CONTROLLERT
 list($view, $data) = dispatch($cleand, 'notFoundController');
 extract($data);
+
+?>
