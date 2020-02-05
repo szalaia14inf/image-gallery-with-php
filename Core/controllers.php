@@ -105,4 +105,32 @@ function aboutController()
     
 }
 
+/**
+ * singleImageEditController - EGY KÉP SZERKESZTÉSE
+ *
+ * @return void
+ */
+function singleImageEditController() {
+    return [
+        "redirect:/",
+        []
+
+    ];
+    
+}
+
+/**
+ * singleImageDeleteController - EGY KÉP TÖRLÉSE
+ *
+ * @return void
+ */
+function singleImageDeleteController() {
+    return [
+        "redirect:/",
+        []
+
+    ];
+    
+}
+
 ?>

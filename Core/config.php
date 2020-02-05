@@ -8,7 +8,7 @@ $siteName = "Májsztró's Gallery";
 /**
  *  $possiblePageSize: lehetséges PAGESIZE
  */
-$possiblePageSize = [5, 10, 20, 30, 50, 100];
+$possiblePageSize = [5, 10, 20, 50, 100];
 
 $config['db_host'] = 'localhost';
 $config['db_user'] = 'phpalapok';

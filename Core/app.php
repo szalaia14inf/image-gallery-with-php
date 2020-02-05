@@ -10,4 +10,12 @@ $cleand = explode("?", $uri)[0];
 list($view, $data) = dispatch($cleand, 'notFoundController');
 extract($data);
 
+if (preg_match("%^redirect\:(?<route>.*)$%", $view, $matches)) {
+    $redirectTarget = $matches['route'];
+    header('Location: '.$redirectTarget);
+    die();
+}
+
+extract ($data);
+
 ?>
