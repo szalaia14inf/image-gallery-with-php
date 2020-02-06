@@ -96,10 +96,10 @@ function singleImageController($params) {
  */
 function aboutController() 
 {
-    return [
+   return [
         'about', 
         [
-            'title' => 'The page you are lookging for is not found.'
+            
         ]
     ];
     

@@ -22,7 +22,7 @@ $routes = [];
 
 //ÚTVONALAK FELVÉTELE A $routes TÖMBBE
 $routes['GET']['/'] = 'homeController';
-$routes['GET']['about'] = 'aboutController';
+$routes['GET']['/about'] = 'aboutController';
 $routes['GET']['/image/(?<id>[\d]+)'] = 'singleImageController';
 $routes['POST']['/image/(?<id>[\d]+)/edit'] = 'singleImageEditController';
 $routes['POST']['/image/(?<id>[\d]+)/delete'] = 'singleImageDeleteController';
