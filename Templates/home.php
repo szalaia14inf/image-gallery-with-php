@@ -26,7 +26,7 @@
 
     <!-- Képek megj. -->
     <?php foreach($content as $picture): ?>
-        <a href="/images/<?=$picture['id']?>"><img src="<?=$picture['thumbnail']?>" alt="<?=$picture['title']?>" title="<?=$picture['title']?>"></a>
+        <a href="/image/<?=$picture['id']?>"><img src="<?=$picture['thumbnail']?>" alt="<?=$picture['title']?>" title="<?=$picture['title']?>"></a>
     <?php endforeach ?>
 
     <!-- Lapozósáv -->
