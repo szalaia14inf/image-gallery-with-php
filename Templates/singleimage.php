@@ -17,6 +17,8 @@
             <form method="post" action="/image/<?=$picture['id']?>/delete" class="mt-5">
                 <div class="form-group">
                     <label for="title">Danger zone</label>
+                    <input type="text" name="title" id="title" value="<?=$picture['title']?>" class="form-control">
+                </div>
                 </div>
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>

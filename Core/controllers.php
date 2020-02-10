@@ -131,8 +131,11 @@ function singleImageEditController() {
  * @return void
  */
 function singleImageDeleteController() {
-    
+    $connection = getConnection();
+    $id = $params['id'];
+    $title = $_POST['title'];
 
+    deleteImage($connection, $id, $title);
 
     return [
         "redirect:/",
