@@ -18,7 +18,6 @@
                 <div class="form-group">
                     <label for="title">Danger zone</label>
                 </div>
-                </div>
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
 
