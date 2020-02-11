@@ -110,7 +110,7 @@ function aboutController()
  *
  * @return void
  */
-function singleImageEditController() {
+function singleImageEditController($params) {
     $connection = getConnection();
     $id = $params['id'];
     $title = $_POST['title'];
@@ -130,12 +130,11 @@ function singleImageEditController() {
  *
  * @return void
  */
-function singleImageDeleteController() {
+function singleImageDeleteController($params) {
     $connection = getConnection();
     $id = $params['id'];
-    $title = $_POST['title'];
-
-    deleteImage($connection, $id, $title);
+    
+    deleteImage($connection, $id);
 
     return [
         "redirect:/",

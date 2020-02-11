@@ -210,10 +210,10 @@ function updateImage($connection, $id, $title) {
 /**
  * deleteImage() - EGY KÉP TÖRLÉSE, AZONOSÍTÓ ALAPJÁN
  */
-function deleteImage($connection, $id, $title) {
-    $query = "DELETE photos SET title = ? WHERE id = ?";
+function deleteImage($connection, $id) {
+    $query = "DELETE FROM photos WHERE id = ?";
     if ($statment = mysqli_prepare($connection, $query)) {
-        mysqli_stmt_bind_param($statment, "si", $title, $id);
+        mysqli_stmt_bind_param($statment, "i", $id);
         mysqli_stmt_execute($statment);
     } else {
         logMessage("ERROR", 'Query error: ' . mysqli_error($connection));
