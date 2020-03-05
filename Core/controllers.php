@@ -16,7 +16,7 @@ function notFoundController() {
     return [
         '404', 
         [
-            'title' => 'The page you are lookging for is not found.'
+            'title' => '404'
         ]
     ];
 }
@@ -62,7 +62,7 @@ function homeController() {
     return [
         'home',
         [
-            'title' => 'Home page',
+            'title' => 'Nyitólap',
             'content' => $content,
             'total' => $total,
             'size' => $size,
@@ -85,7 +85,7 @@ function singleImageController($params) {
     return [
         'singleImage', 
         [
-            'title' => 'Image' .$picture['id'],
+            'title' => 'Kép' .$picture['id'],
             'picture' => $picture
         ]
     ];
@@ -99,7 +99,7 @@ function aboutController()
    return [
         'about', 
         [
-            
+          'title' => 'Rólunk',
         ]
     ];
     
