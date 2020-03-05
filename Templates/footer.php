@@ -1,5 +1,5 @@
 <p>
 
-    2020 &copy; PHP Májsztró
+    2020 &copy; PHPMájsztró
     
 </p>

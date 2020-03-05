@@ -5,7 +5,7 @@
     <div class="row">
         <form action="" method="GET">
             <div class="form-group">
-                <label for="size">Page Size: </label>
+                <label for="size">Oldal Mérete: </label>
                 <select name="size" id="size" class="form-control">
                     <?php foreach($possiblePageSize as $pagesize): ?>
                     <option <?=$size==$pagesize? "selected" : ""?> ><?=$pagesize?></option>
