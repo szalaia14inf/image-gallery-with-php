@@ -16,6 +16,8 @@ if (preg_match("%^redirect\:(?<route>.*)$%", $view, $matches)) {
     die();
 }
 
+$user = createUser();
+
 extract ($data);
 
 ?>

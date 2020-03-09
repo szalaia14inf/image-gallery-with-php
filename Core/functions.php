@@ -221,3 +221,18 @@ function deleteImage($connection, $id) {
     }  
 }
 
+/**
+ * FELHASZNÁLÓ LÉTREHOZÁSA
+ *
+ * @return void
+ */
+function createUser() {
+
+    $loggedIn = array_key_exists('user', $_SESSION);
+
+    return [
+        'loggedIn' => $loggedIn,
+        'name' => $loggedIn ? $_SESSION['user']['name'] : null
+    ];
+
+}
