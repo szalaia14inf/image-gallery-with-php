@@ -8,7 +8,7 @@
 
     <form action="/login" method="POST">
         <div class="form-group">
-            <label for="email">E-mail cím: </label>
+            <label for="email">E-mail: </label>
             <input type="email" class="form-control" name="email" id="email" placeholder="Írd be az E-mail címedet...">
         </div>
 

@@ -233,30 +233,28 @@ function createUser() {
     return [
         'loggedIn' => $loggedIn,
         'name' => $loggedIn ? $_SESSION['user']['name'] : null
-    ];
+    ];   
+}
+/**
+ * BEJELENTKEZÉS
+ */
+function loginUser($connection, $email, $password)
+{
+    $query = "SELECT name, password FROM photos_users WHERE email = ?";
 
-    /**
-     * BEJELENTKEZÉS
-     */
-    function loginUser($connection, $email, $password)
-    {
-        $query = "SELECT name, password FROM photos_users WHERE email = ?";
+    if ($statment = mysqli_prepare($connection, $query)) {
+        mysqli_stmt_bind_param($statment, "s", $email);
+        mysqli_stmt_execute($statment);
+        $result = mysqli_stmt_get_result($statment);
+        $record = mysqli_fetch_assoc($result);
 
-        if ($statment = mysqli_prepare($connection, $query)) {
-            mysqli_stmt_bind_param($statment, "s", $email);
-            mysqli_stmt_execute($statment);
-            $result = mysqli_stmt_get_result($statment);
-            $record = mysqli_fetch_assoc($result);
-
-        if ($record !=null && password_verify($password, $record['password'])) {
+        if ($record != null && password_verify($password, $record['password'])) {
             return $record;
         } else {
             return null;
         }
-        
-        } else {
-            logMessage("ERROR", 'Query error: ' . mysqli_error($connection));
-            errorPage();
-        }
+    } else {
+        logMessage("ERROR", 'Query error: ' . mysqli_error($connection));
+        errorPage();
     }
 }

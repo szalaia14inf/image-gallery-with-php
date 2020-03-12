@@ -139,68 +139,81 @@ function singleImageDeleteController($params) {
     return [
         "redirect:/",
         []
-
     ];
+}
 
-    /**
-     * Display Login form.
-     * route: /login
-     * 
-     * A /login route-ra két irányból lehet jönni:
-     * - felhasználó be szeretne jelentkezni
-     * - hibás belépési kísérlet után is ide irányítunk át
-     * Utóbbi esetben jelezni is kell, hogy előtte hiba volt, ezért kell a 
-     * $containsError logikai változó, amit a nézetben fel tudunk használni
-     * a figyelmeztető üzenet (alert) megjelenítésére.
-     *
-     * @return void
-     */
-    function loginFormController()
-    {
-        // Volt-e hiba a lépésnél?
-        $containsError = array_key_exists('containsError', $_SESSION);
+/**
+ * Display Login form.
+ * route: /login
+ * 
+ * A /login route-ra két irányból lehet jönni:
+ * - felhasználó be szeretne jelentkezni
+ * - hibás belépési kísérlet után is ide irányítunk át
+ * Utóbbi esetben jelezni is kell, hogy előtte hiba volt, ezért kell a 
+ * $containsError logikai változó, amit a nézetben fel tudunk használni
+ * a figyelmeztető üzenet (alert) megjelenítésére.
+ *
+ * @return void
+ */
+function loginFormController()
+{
+    // Volt-e hiba a lépésnél?
+    $containsError = array_key_exists('containsError', $_SESSION);
 
-        //Hiba változó törlése
-        unset($_SESSION['containsError']);
+    //Hiba változó törlése
+    unset($_SESSION['containsError']);
 
-        return [
-            'login',
-            [
-                'title' => 'Belépés',
-                'containsError' => $containsError
-            ]
+    return [
+        'login',
+        [
+            'title' => 'Belépés',
+            'containsError' => $containsError
+        ]
+    ];
+}
+
+/**
+ * Sending login form.
+ *
+ * @return void
+ */
+function loginSubmitController()
+{
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    $user = loginUser(getConnection(), $email, $password);
+
+    if ($user != null) {
+        //setcookie('user', $email, time() + 900);
+        $_SESSION['user'] = [
+            'name' => $user['name'],
+            'username' => $user['email']
         ];
+        $view = 'redirect:/';
+    } else {
+        $_SESSION['containsError'] = 1;
+        $view = 'redirect:/login';
     }
 
-    /**
-     * Sending login form.
-     *
-     * @return void
-     */
-    function loginSubmitController()
-    {
-        $email = trim($_POST['email']);
-        $password = trim($_POST['password']);
+    return [
+        $view,
+        []
+    ];
+}
 
-        $user = loginUser(getConnection(), $email, $password);
+/**
+ * KILÉPÉS
+ * COOKIE-K VISSZA.
+ */
+function logoutSubmitController() {
+    
+    unset($_SESSION['user']);
 
-        if ($user != null) {
-            //setcookie('user', $email, time() + 900);
-            $_SESSION['user'] = [
-                'name' => $user['name'],
-                'username' => $user['email']
-            ];
-            $view = 'redirect:/';
-        } else {
-            $_SESSION['containsError'] = 1;
-            $view = 'redirect:/login';
-        }
-
-        return [
-            $view,
-            []
-        ];
-    }
+    return [
+        'redirect:/',
+        []
+    ];
 }
 
 ?>
