@@ -27,4 +27,8 @@ $routes['GET']['/image/(?<id>[\d]+)'] = 'singleImageController';
 $routes['POST']['/image/(?<id>[\d]+)/edit'] = 'singleImageEditController';
 $routes['POST']['/image/(?<id>[\d]+)/delete'] = 'singleImageDeleteController';
 
+$routes['GET']['/login'] = 'loginFormController';
+$routes['POST']['/login'] = 'loginSubmitController';
+$routes['GET']['/logout'] = 'logoutSubmitController';
+
 ?>

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once "Core/functions.php";
 require_once "Core/controllers.php";
 require_once "Core/config.php";
